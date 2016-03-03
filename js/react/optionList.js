@@ -1,19 +1,19 @@
 import React from "react";
 
-var listApp =  React.createClass({
-    render: function(){
-        var list = this.props.list;
-        console.log(list)
+
+var ListApp =  React.createClass({
+    render: function() {
+        var results = this.props.list;
         return (
             <ul>
-                {
-                    results.map(function(list) {
-                        return <li>이름은: {list.firstName} 성은 :{list.lastName}</li>;
-                    })
-                }
+                {results.map(function(result,index) {
+                    return <li key={'list'+index}>firstName : {result.firstName} lastName : {result.lastName}</li>;
+                })}
             </ul>
         );
     }
 });
 
-module.exports = listApp;
+
+
+module.exports = ListApp;
